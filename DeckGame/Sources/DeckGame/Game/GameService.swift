@@ -8,7 +8,7 @@
 
 import Foundation
 import DMToolbox
-import CardGameCommon
+import DeckCommon
 
 protocol GameService {
     var state: ObservableProperty<GameState> { get }

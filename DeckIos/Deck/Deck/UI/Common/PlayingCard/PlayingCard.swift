@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CardGameCommon
+import DeckCommon
 
 class PlayingCard {
     let card: Card

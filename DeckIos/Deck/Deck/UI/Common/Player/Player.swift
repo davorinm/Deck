@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CardGameCommon
+import DeckCommon
 
 enum PlayerPosition {
     case first

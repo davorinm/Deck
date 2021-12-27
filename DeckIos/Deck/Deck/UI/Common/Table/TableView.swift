@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CardGameCommon
+import DeckCommon
 
 class TableView: GradientView {
     

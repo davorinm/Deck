@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CardGameCommon
+import DeckCommon
 
 class PlayerHuman: Player {
     private weak var playerView: PlayerView! // TODO: Remove

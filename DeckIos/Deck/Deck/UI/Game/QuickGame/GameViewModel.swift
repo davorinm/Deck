@@ -8,7 +8,7 @@
 
 import Foundation
 import DMToolbox
-import CardGameCommon
+import DeckCommon
 
 class GameViewModel {
     private let deck: Deck

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CardGameCommon
+import DeckCommon
 
 class Deck {
     let deckView: DeckView

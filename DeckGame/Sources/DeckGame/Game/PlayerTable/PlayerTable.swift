@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CardGameCommon
+import DeckCommon
 
 protocol PlayerTable {
     var trumpColor: (() -> Card.Color?)? { get set }

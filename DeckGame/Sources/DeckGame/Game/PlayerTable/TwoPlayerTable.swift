@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CardGameCommon
+import DeckCommon
 
 class TwoPlayerTable: PlayerTable {
     private var firstCard: Card?

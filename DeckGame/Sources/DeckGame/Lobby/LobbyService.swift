@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import CardGameCommon
 import DMToolbox
+import DeckCommon
 
 enum LobbyServiceState {
     case unknown

@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import CardGameCommon
 import DMToolbox
+import DeckCommon
 
 class GameEngineNetwork: GameEngine {
     let state: ObservableProperty<GameState> = ObservableProperty<GameState>(value: .initialized)

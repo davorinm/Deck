@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import CardGameCommon
 import DMToolbox
+import DeckCommon
 
 class LobbyServiceImpl: LobbyService {
     let loading: ObservableProperty<Bool> = ObservableProperty<Bool>(value: false)

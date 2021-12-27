@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CardGameCommon
+import DeckCommon
 
 class FourPlayerTable: PlayerTable {
     var trumpColor: (() -> Card.Color?)?

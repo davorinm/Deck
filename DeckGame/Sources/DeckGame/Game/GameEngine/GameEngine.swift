@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CardGameCommon
+import DeckCommon
 import DMToolbox
 
 protocol GameEngine {

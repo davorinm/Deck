@@ -25,8 +25,5 @@ let package = Package(
         .target(
             name: "DMToolbox",
             dependencies: []),
-        .testTarget(
-            name: "DMToolboxTests",
-            dependencies: ["DMToolbox"]),
     ]
 )

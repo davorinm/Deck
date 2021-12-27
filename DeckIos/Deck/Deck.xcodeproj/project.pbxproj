@@ -3,15 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E01486C209CF4880047BE29 /* TwoPlayerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E01486B209CF4880047BE29 /* TwoPlayerTable.swift */; };
-		1E04EE5D275440D500E478CA /* GameServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E04EE5C275440D500E478CA /* GameServiceImpl.swift */; };
-		1E04EE60275444C400E478CA /* GameEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E04EE5F275444C400E478CA /* GameEngine.swift */; };
-		1E2916F32733475D00BCBA7A /* GameServiceTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2916F22733475D00BCBA7A /* GameServiceTypes.swift */; };
-		1E391ADD202A69590034A34C /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E391ADC202A69590034A34C /* GameService.swift */; };
 		1E6212311FFD8AE4006D93AF /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6212301FFD8AE4006D93AF /* UIView+Helpers.swift */; };
 		1E6212331FFD8B10006D93AF /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6212321FFD8B10006D93AF /* KeyboardHandler.swift */; };
 		1E6688B720D6AA38008130A1 /* PlayerHuman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6688B620D6AA38008130A1 /* PlayerHuman.swift */; };
@@ -27,15 +22,8 @@
 		1E6B907F274BAE770058E60D /* GameEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B907E274BAE770058E60D /* GameEndViewController.swift */; };
 		1E6B9081274BB2190058E60D /* GameFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B9080274BB2190058E60D /* GameFlowViewController.swift */; };
 		1E6B9083274C4A640058E60D /* UIViewController+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6B9082274C4A640058E60D /* UIViewController+Embed.swift */; };
-		1E6F3CC72081EB43007B9B28 /* LobbyServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6F3CC62081EB43007B9B28 /* LobbyServiceImpl.swift */; };
-		1E7016802735D5320078150B /* PlayerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E70167F2735D5320078150B /* PlayerTable.swift */; };
-		1E7016822735ED910078150B /* ThreePlayerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7016812735ED910078150B /* ThreePlayerTable.swift */; };
-		1E7016842735EDB70078150B /* FourPlayerTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7016832735EDB70078150B /* FourPlayerTable.swift */; };
 		1E80B014208932E100022F75 /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E80B013208932E100022F75 /* PlayingCard.swift */; };
 		1E87E4EB1FF2EB7A0045EFC4 /* NetworkGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E87E4EA1FF2EB7A0045EFC4 /* NetworkGameViewModel.swift */; };
-		1E87E4ED1FF2F0690045EFC4 /* LobbyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E87E4EC1FF2F0690045EFC4 /* LobbyService.swift */; };
-		1EA9763A208698B800D42C55 /* GameEngineNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA97639208698B800D42C55 /* GameEngineNetwork.swift */; };
-		1EA9763E2086993500D42C55 /* GameEngineLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9763D2086993500D42C55 /* GameEngineLocal.swift */; };
 		1EA9764020869C2300D42C55 /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9763F20869C2300D42C55 /* ScoreboardView.swift */; };
 		1EA9764220869CF400D42C55 /* Scoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA9764120869CF400D42C55 /* Scoreboard.swift */; };
 		1EC5E74F1FEC73E000F36809 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EC5E74E1FEC73E000F36809 /* Launch Screen.storyboard */; };
@@ -62,20 +50,14 @@
 		1EDF7BBD1FE47B2B00A5A1A2 /* LobbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDF7B801FE47B2B00A5A1A2 /* LobbyViewController.swift */; };
 		1EDF7BBE1FE47B2B00A5A1A2 /* NetworkGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDF7B811FE47B2B00A5A1A2 /* NetworkGameViewController.swift */; };
 		1EDF7BC31FE4805B00A5A1A2 /* AppDelegateRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EDF7BC21FE4805B00A5A1A2 /* AppDelegateRegistration.swift */; };
-		1EECBEAC27791BEB005B7160 /* CardGameCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 1EECBEAB27791BEB005B7160 /* CardGameCommon */; };
-		1EECBEAE27791BEF005B7160 /* Deck-game in Frameworks */ = {isa = PBXBuildFile; productRef = 1EECBEAD27791BEF005B7160 /* Deck-game */; };
-		1EECBEB027791BF3005B7160 /* DMToolbox in Frameworks */ = {isa = PBXBuildFile; productRef = 1EECBEAF27791BF3005B7160 /* DMToolbox */; };
 		1EFB12AD1FF594BD00FEF914 /* MultiplayerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EFB12AB1FF594BD00FEF914 /* MultiplayerViewCell.swift */; };
 		1EFB12AE1FF594BD00FEF914 /* MultiplayerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EFB12AC1FF594BD00FEF914 /* MultiplayerViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1E01486B209CF4880047BE29 /* TwoPlayerTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerTable.swift; sourceTree = "<group>"; };
 		1E03AACF23511D5600B687D2 /* CardGame.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CardGame.entitlements; sourceTree = "<group>"; };
-		1E04EE5C275440D500E478CA /* GameServiceImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameServiceImpl.swift; sourceTree = "<group>"; };
-		1E04EE5F275444C400E478CA /* GameEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngine.swift; sourceTree = "<group>"; };
-		1E2916F22733475D00BCBA7A /* GameServiceTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameServiceTypes.swift; sourceTree = "<group>"; };
-		1E391ADC202A69590034A34C /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
+		1E206A7C277A64A7002399F3 /* DeckCommon */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DeckCommon; path = ../../DeckCommon; sourceTree = "<group>"; };
+		1E206A7D277A64B0002399F3 /* DeckGame */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DeckGame; path = ../../DeckGame; sourceTree = "<group>"; };
 		1E6212301FFD8AE4006D93AF /* UIView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
 		1E6212321FFD8B10006D93AF /* KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
 		1E6688B620D6AA38008130A1 /* PlayerHuman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerHuman.swift; sourceTree = "<group>"; };
@@ -91,18 +73,13 @@
 		1E6B907E274BAE770058E60D /* GameEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEndViewController.swift; sourceTree = "<group>"; };
 		1E6B9080274BB2190058E60D /* GameFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFlowViewController.swift; sourceTree = "<group>"; };
 		1E6B9082274C4A640058E60D /* UIViewController+Embed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Embed.swift"; sourceTree = "<group>"; };
-		1E6F3CC62081EB43007B9B28 /* LobbyServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyServiceImpl.swift; sourceTree = "<group>"; };
-		1E70167F2735D5320078150B /* PlayerTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTable.swift; sourceTree = "<group>"; };
-		1E7016812735ED910078150B /* ThreePlayerTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreePlayerTable.swift; sourceTree = "<group>"; };
-		1E7016832735EDB70078150B /* FourPlayerTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourPlayerTable.swift; sourceTree = "<group>"; };
 		1E80B013208932E100022F75 /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
 		1E87E4EA1FF2EB7A0045EFC4 /* NetworkGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkGameViewModel.swift; sourceTree = "<group>"; };
-		1E87E4EC1FF2F0690045EFC4 /* LobbyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyService.swift; sourceTree = "<group>"; };
-		1EA97639208698B800D42C55 /* GameEngineNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngineNetwork.swift; sourceTree = "<group>"; };
-		1EA9763D2086993500D42C55 /* GameEngineLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEngineLocal.swift; sourceTree = "<group>"; };
 		1EA9763F20869C2300D42C55 /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
 		1EA9764120869CF400D42C55 /* Scoreboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scoreboard.swift; sourceTree = "<group>"; };
+		1EB1180A277A6A4B0071C04A /* DMToolbox */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DMToolbox; path = ../../DMToolbox; sourceTree = "<group>"; };
 		1EC5E74E1FEC73E000F36809 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		1EDAAAE3277A6933001C8C9E /* DMToolbox */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DMToolbox; path = ../../DMToolbox; sourceTree = "<group>"; };
 		1EDF7B1F1FE47AB800A5A1A2 /* Deck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EDF7B221FE47AB800A5A1A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EDF7B271FE47AB800A5A1A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -128,9 +105,6 @@
 		1EDF7B801FE47B2B00A5A1A2 /* LobbyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LobbyViewController.swift; sourceTree = "<group>"; };
 		1EDF7B811FE47B2B00A5A1A2 /* NetworkGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkGameViewController.swift; sourceTree = "<group>"; };
 		1EDF7BC21FE4805B00A5A1A2 /* AppDelegateRegistration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateRegistration.swift; sourceTree = "<group>"; };
-		1EECBEA427791863005B7160 /* Deck-common */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Deck-common"; path = "../../Deck-common"; sourceTree = "<group>"; };
-		1EECBEA72779192A005B7160 /* Deck-game */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Deck-game"; path = "../../Deck-game"; sourceTree = "<group>"; };
-		1EECBEAA27791AD7005B7160 /* DMtoolbox */ = {isa = PBXFileReference; lastKnownFileType = folder; name = DMtoolbox; path = ../../DMtoolbox; sourceTree = "<group>"; };
 		1EFB12AB1FF594BD00FEF914 /* MultiplayerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplayerViewCell.swift; sourceTree = "<group>"; };
 		1EFB12AC1FF594BD00FEF914 /* MultiplayerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiplayerViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,25 +114,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EECBEB027791BF3005B7160 /* DMToolbox in Frameworks */,
-				1EECBEAC27791BEB005B7160 /* CardGameCommon in Frameworks */,
-				1EECBEAE27791BEF005B7160 /* Deck-game in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E04EE5E275441A600E478CA /* GameEngine */ = {
-			isa = PBXGroup;
-			children = (
-				1E04EE5F275444C400E478CA /* GameEngine.swift */,
-				1EA9763D2086993500D42C55 /* GameEngineLocal.swift */,
-				1EA97639208698B800D42C55 /* GameEngineNetwork.swift */,
-			);
-			path = GameEngine;
-			sourceTree = "<group>";
-		};
 		1E1F37221FE9C49A00FD9A30 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,17 +146,6 @@
 				1E6B907E274BAE770058E60D /* GameEndViewController.swift */,
 			);
 			path = Game;
-			sourceTree = "<group>";
-		};
-		1E70167E2735D5200078150B /* PlayerTable */ = {
-			isa = PBXGroup;
-			children = (
-				1E70167F2735D5320078150B /* PlayerTable.swift */,
-				1E01486B209CF4880047BE29 /* TwoPlayerTable.swift */,
-				1E7016812735ED910078150B /* ThreePlayerTable.swift */,
-				1E7016832735EDB70078150B /* FourPlayerTable.swift */,
-			);
-			path = PlayerTable;
 			sourceTree = "<group>";
 		};
 		1EABF1B120BA8B3100CA9CFF /* Player */ = {
@@ -268,7 +218,6 @@
 			children = (
 				1E03AACF23511D5600B687D2 /* CardGame.entitlements */,
 				1EDF7B5E1FE47B2B00A5A1A2 /* Tools */,
-				1EDF7B391FE47B2B00A5A1A2 /* Providers */,
 				1EEE19851FEC66F00051D753 /* UI */,
 				1EDF7B221FE47AB800A5A1A2 /* AppDelegate.swift */,
 				1EDF7BC21FE4805B00A5A1A2 /* AppDelegateRegistration.swift */,
@@ -286,15 +235,6 @@
 				1EDF7B371FE47B2000A5A1A2 /* ViewControllerTransitionAnimation.swift */,
 			);
 			path = Animations;
-			sourceTree = "<group>";
-		};
-		1EDF7B391FE47B2B00A5A1A2 /* Providers */ = {
-			isa = PBXGroup;
-			children = (
-				1EE25089208FD921000B53DA /* Lobby */,
-				1EE2508C208FD92B000B53DA /* Game */,
-			);
-			path = Providers;
 			sourceTree = "<group>";
 		};
 		1EDF7B441FE47B2B00A5A1A2 /* Settings */ = {
@@ -362,33 +302,13 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		1EE25089208FD921000B53DA /* Lobby */ = {
-			isa = PBXGroup;
-			children = (
-				1E87E4EC1FF2F0690045EFC4 /* LobbyService.swift */,
-				1E6F3CC62081EB43007B9B28 /* LobbyServiceImpl.swift */,
-			);
-			path = Lobby;
-			sourceTree = "<group>";
-		};
-		1EE2508C208FD92B000B53DA /* Game */ = {
-			isa = PBXGroup;
-			children = (
-				1E70167E2735D5200078150B /* PlayerTable */,
-				1E04EE5E275441A600E478CA /* GameEngine */,
-				1E391ADC202A69590034A34C /* GameService.swift */,
-				1E04EE5C275440D500E478CA /* GameServiceImpl.swift */,
-				1E2916F22733475D00BCBA7A /* GameServiceTypes.swift */,
-			);
-			path = Game;
-			sourceTree = "<group>";
-		};
 		1EECBEA327791863005B7160 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				1EECBEA427791863005B7160 /* Deck-common */,
-				1EECBEA72779192A005B7160 /* Deck-game */,
-				1EECBEAA27791AD7005B7160 /* DMtoolbox */,
+				1E206A7C277A64A7002399F3 /* DeckCommon */,
+				1E206A7D277A64B0002399F3 /* DeckGame */,
+				1EDAAAE3277A6933001C8C9E /* DMToolbox */,
+				1EB1180A277A6A4B0071C04A /* DMToolbox */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -436,9 +356,6 @@
 			);
 			name = Deck;
 			packageProductDependencies = (
-				1EECBEAB27791BEB005B7160 /* CardGameCommon */,
-				1EECBEAD27791BEF005B7160 /* Deck-game */,
-				1EECBEAF27791BF3005B7160 /* DMToolbox */,
 			);
 			productName = CardGame;
 			productReference = 1EDF7B1F1FE47AB800A5A1A2 /* Deck.app */;
@@ -528,8 +445,6 @@
 				1EDF7B981FE47B2B00A5A1A2 /* PlayerView.swift in Sources */,
 				1E6B907F274BAE770058E60D /* GameEndViewController.swift in Sources */,
 				1E80B014208932E100022F75 /* PlayingCard.swift in Sources */,
-				1E04EE60275444C400E478CA /* GameEngine.swift in Sources */,
-				1E7016802735D5320078150B /* PlayerTable.swift in Sources */,
 				1EDF7BBE1FE47B2B00A5A1A2 /* NetworkGameViewController.swift in Sources */,
 				1E687B401FFA80EB00CABB7E /* RefreshControl.swift in Sources */,
 				1E6B9083274C4A640058E60D /* UIViewController+Embed.swift in Sources */,
@@ -542,35 +457,25 @@
 				1EDF7B941FE47B2B00A5A1A2 /* Table.swift in Sources */,
 				1E6688B920D6AA46008130A1 /* PlayerComputer.swift in Sources */,
 				1EDF7B8D1FE47B2B00A5A1A2 /* SettingsViewController.swift in Sources */,
-				1E7016842735EDB70078150B /* FourPlayerTable.swift in Sources */,
-				1E2916F32733475D00BCBA7A /* GameServiceTypes.swift in Sources */,
 				1EDF7B961FE47B2B00A5A1A2 /* Deck.swift in Sources */,
 				1E6212331FFD8B10006D93AF /* KeyboardHandler.swift in Sources */,
 				1EDF7BA11FE47B2B00A5A1A2 /* RadialGradientLayer.swift in Sources */,
-				1E01486C209CF4880047BE29 /* TwoPlayerTable.swift in Sources */,
 				1E6B907D274BADAD0058E60D /* GameAssemblyViewController.swift in Sources */,
 				1E687B481FFA80EB00CABB7E /* RefreshControlErrorView.swift in Sources */,
-				1E04EE5D275440D500E478CA /* GameServiceImpl.swift in Sources */,
 				1E687B461FFA80EB00CABB7E /* RefreshControlView.swift in Sources */,
 				1EDF7B381FE47B2000A5A1A2 /* ViewControllerTransitionAnimation.swift in Sources */,
 				1EDF7B8B1FE47B2B00A5A1A2 /* SettingsViewModel.swift in Sources */,
 				1E687B431FFA80EB00CABB7E /* RefreshControlAssembleView.swift in Sources */,
 				1E687B471FFA80EB00CABB7E /* RefreshControlLoadingView.swift in Sources */,
-				1E391ADD202A69590034A34C /* GameService.swift in Sources */,
 				1EDF7B921FE47B2B00A5A1A2 /* PlayingCardView.swift in Sources */,
 				1EA9764020869C2300D42C55 /* ScoreboardView.swift in Sources */,
 				1EA9764220869CF400D42C55 /* Scoreboard.swift in Sources */,
-				1EA9763A208698B800D42C55 /* GameEngineNetwork.swift in Sources */,
-				1E87E4ED1FF2F0690045EFC4 /* LobbyService.swift in Sources */,
 				1EDF7B951FE47B2B00A5A1A2 /* DeckView.swift in Sources */,
 				1EDF7B9B1FE47B2B00A5A1A2 /* GameViewController.swift in Sources */,
 				1EDF7B991FE47B2B00A5A1A2 /* Player.swift in Sources */,
 				1E687B441FFA80EB00CABB7E /* RefreshControlSpinner.swift in Sources */,
-				1EA9763E2086993500D42C55 /* GameEngineLocal.swift in Sources */,
 				1EDF7BAE1FE47B2B00A5A1A2 /* UIViewShadow.swift in Sources */,
-				1E6F3CC72081EB43007B9B28 /* LobbyServiceImpl.swift in Sources */,
 				1E6B9081274BB2190058E60D /* GameFlowViewController.swift in Sources */,
-				1E7016822735ED910078150B /* ThreePlayerTable.swift in Sources */,
 				1EDF7B231FE47AB800A5A1A2 /* AppDelegate.swift in Sources */,
 				1EDF7BAC1FE47B2B00A5A1A2 /* UIViewNib.swift in Sources */,
 				1EDF7BBD1FE47B2B00A5A1A2 /* LobbyViewController.swift in Sources */,
@@ -699,8 +604,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -713,10 +617,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68VR5CE66Z;
 				INFOPLIST_FILE = Deck/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.pluen.Deck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -733,10 +634,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68VR5CE66Z;
 				INFOPLIST_FILE = Deck/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.pluen.Deck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -767,21 +665,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		1EECBEAB27791BEB005B7160 /* CardGameCommon */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = CardGameCommon;
-		};
-		1EECBEAD27791BEF005B7160 /* Deck-game */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = "Deck-game";
-		};
-		1EECBEAF27791BF3005B7160 /* DMToolbox */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = DMToolbox;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1EDF7B171FE47AB800A5A1A2 /* Project object */;
 }

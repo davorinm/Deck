@@ -10,9 +10,15 @@ import Foundation
 import DMToolbox
 import DeckCommon
 
-protocol GameService {
+public protocol GameService {
     var state: ObservableProperty<GameState> { get }
-    var playingState: ObservableProperty<GamePlayingState?> { get }
+    
+    // TODO: Chek if needed
+//    var players: [Player] { get }
+//    var table: Table { get }
+//    var deck: Deck { get }
+    // TODO: Chek if needed
+    
     var trumpColor: Card.Color? { get }
     
     func prepareGame(gameMode: GameMode)

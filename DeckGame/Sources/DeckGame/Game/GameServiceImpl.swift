@@ -12,7 +12,6 @@ import DeckCommon
 
 class GameServiceImpl: GameService {
     let state: ObservableProperty<GameState> = ObservableProperty<GameState>(value: .initialized)
-    let playingState: ObservableProperty<GamePlayingState?> = ObservableProperty<GamePlayingState?>(value: nil)
     
     private(set) var trumpColor: Card.Color?
     
@@ -37,21 +36,22 @@ class GameServiceImpl: GameService {
             self.gameEngine = GameEngineNetwork(gameId: "")
         }
         
-        self.gameEngine!.state.subscribe(self) { gameState in
+        self.gameEngine!.state.subscribe(self) { [unowned self] (gameState) in
             print(gameState)
-        }
-        
-        self.gameEngine!.playingState.subscribe(self) { gamePlayingState in
-            print(gamePlayingState)
             
-            self.playingState.value = gamePlayingState
+            guard let gameState = gameState else {
+                assertionFailure("Check!!!")
+                return
+            }
+            
+            self.state.value = .playing(playingState: gameState)
         }
         
         self.state.value = .assembling(gameMode: gameMode)
     }
     
     func registerPlayer(name: String) {
-        self.state.value = .playing(gameType: gameEngine!.gameType)
+        self.state.value = .prepared(gameType: gameEngine!.gameType)
         self.gameEngine!.registerPlayer(name: name)
     }
     

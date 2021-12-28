@@ -10,14 +10,14 @@ import Foundation
 import DMToolbox
 import DeckCommon
 
-enum LobbyServiceState {
+public enum LobbyServiceState {
     case unknown
     case connected
     case disconnected
     case gameCreated(gameId: String)
 }
 
-protocol LobbyService {
+public protocol LobbyService {
     var loading: ObservableProperty<Bool> { get }
     var users: ObservableProperty<[User]> { get }
     var state: ObservableProperty<LobbyServiceState> { get }

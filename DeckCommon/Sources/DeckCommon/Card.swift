@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Card: Codable, Equatable {
+public class Card: Codable, Equatable {
     public enum Color: Int, Codable {
         case hearts = 1
         case diamonds = 2
@@ -19,10 +19,18 @@ public struct Card: Codable, Equatable {
     public let face: Face
     public let value: Int
     
+    public var marrige: Bool = false
+    
+    public var selectionEnabled: Bool = true 
+    
     init(_ cardColor: Color, _ cardFace: Face) {
         color = cardColor
         face = cardFace
         value = cardFace.rawValue
+    }
+    
+    public static func == (lhs: Card, rhs: Card) -> Bool {
+        return lhs.color == rhs.color && lhs.face == rhs.face
     }
 }
 

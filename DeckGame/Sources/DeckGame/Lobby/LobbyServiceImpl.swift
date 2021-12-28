@@ -10,19 +10,19 @@ import Foundation
 import DMToolbox
 import DeckCommon
 
-class LobbyServiceImpl: LobbyService {
-    let loading: ObservableProperty<Bool> = ObservableProperty<Bool>(value: false)
-    let users: ObservableProperty<[User]> = ObservableProperty<[User]>(value: [])
-    let state: ObservableProperty<LobbyServiceState> = ObservableProperty<LobbyServiceState>(value: .unknown)
+public class LobbyServiceImpl: LobbyService {
+    public let loading: ObservableProperty<Bool> = ObservableProperty<Bool>(value: false)
+    public let users: ObservableProperty<[User]> = ObservableProperty<[User]>(value: [])
+    public let state: ObservableProperty<LobbyServiceState> = ObservableProperty<LobbyServiceState>(value: .unknown)
     
     private let socket: WebSocket
     
-    init() {
+    public init() {
         socket = WebSocket(url: URL(string: "ws://localhost:8080/lobby")!)
         socket.didReceiveMessage = websocketDidReceiveMessage
     }
     
-    func registerPlayer(name: String) {
+    public func registerPlayer(name: String) {
         socket.connect() {
             
             
@@ -39,14 +39,14 @@ class LobbyServiceImpl: LobbyService {
         }
     }
     
-    func unregisterPlayer() {
+    public func unregisterPlayer() {
         socket.disconnect() {
 
             state.value = .disconnected
         }
     }
     
-    func gameRequest(userId: String) {
+    public func gameRequest(userId: String) {
         let lobbyMessage = LobbyMessage(gameRequest: userId)
         guard let json = lobbyMessage.toJson() else {
             assertionFailure("Lobby message json failure")

@@ -11,8 +11,7 @@ import DeckCommon
 import DMToolbox
 
 protocol GameEngine {
-    var state: ObservableProperty<GameState> { get }
-    var playingState: ObservableProperty<GamePlayingState?> { get }
+    var state: ObservableProperty<GamePlayingState?> { get }
     
     var gameType: GameType { get }
     var players: [Player] { get }

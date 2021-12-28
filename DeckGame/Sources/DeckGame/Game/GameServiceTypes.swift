@@ -9,30 +9,18 @@
 import Foundation
 import DeckCommon
 
-// TODO: Move to common, or not...
+public typealias Completion = (() -> Void)
 
-public enum GameType: Int, Codable {
-    case twoPlayers = 0
-    case threePlayers
-    case fourPlayers
-}
-
-public enum GameMode {
-    case quick(gameType: GameType)
-    case network
-}
-
-typealias Completion = (() -> Void)
-
-enum GameState {
+public enum GameState {
     case initialized
     case assembling(gameMode: GameMode)
     // TODO: Consider canceled state
-    case playing(gameType: GameType)
+    case prepared(gameType: GameType)
+    case playing(playingState: GamePlayingState)
     case gameEnd
 }
 
-enum GamePlayingState {
+public enum GamePlayingState {
     case playersRegistered(players: [Player], gameType: GameType)
     case createDeck(count: Int, completion: Completion)
     case addCard(player: Player, card: Card, deckCardsCount: Int, completion: Completion)

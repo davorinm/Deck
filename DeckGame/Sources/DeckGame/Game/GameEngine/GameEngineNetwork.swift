@@ -11,8 +11,7 @@ import DMToolbox
 import DeckCommon
 
 class GameEngineNetwork: GameEngine {
-    let state: ObservableProperty<GameState> = ObservableProperty<GameState>(value: .initialized)
-    let playingState: ObservableProperty<GamePlayingState?> = ObservableProperty<GamePlayingState?>(value: nil)
+    let state: ObservableProperty<GamePlayingState?> = ObservableProperty<GamePlayingState?>(value: nil)
 
     private(set) var trumpColor: Card.Color? = nil
     
@@ -59,7 +58,7 @@ class GameEngineNetwork: GameEngine {
         
         switch gameMessage.type {
         case .initialized:
-            state.value = .initialized
+            state.value = nil
         case .waitingForPlayers:
 //            state.value = .waitingForPlayers(true)
             assertionFailure()

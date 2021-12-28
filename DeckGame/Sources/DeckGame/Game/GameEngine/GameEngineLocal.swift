@@ -11,16 +11,18 @@ import DMToolbox
 import DeckCommon
 
 class GameEngineLocal: GameEngine {
-    let state: ObservableProperty<GameState> = ObservableProperty<GameState>(value: .initialized)
-    let playingState: ObservableProperty<GamePlayingState?> = ObservableProperty<GamePlayingState?>(value: nil)
+    let state: ObservableProperty<GamePlayingState?> = ObservableProperty<GamePlayingState?>(value: nil)
     
-    private(set) var trumpColor: Card.Color?
+//    var players: [Player] { get }
+//    var table: Table { get }
+//    var deck: Deck { get }
     
     let gameType: GameType
     let players: [Player]
     
-    private var deckCards: [Card]
-    private var table: PlayerTable
+    // TODO: Change to Deck
+    private var deck: Deck
+    private var table: Table
     
     init(gameType: GameType) {
         self.gameType = gameType
@@ -49,21 +51,14 @@ class GameEngineLocal: GameEngine {
                             PlayerComputer(playerPosition: .fourth)]
         }
         
-        self.deckCards = Card.fakeDeck() // TODO: Deck
-        
-        // TODO: check!!!
-        self.table.trumpColor = { [unowned self] in
-            return self.trumpColor
-        }
+        self.deck = Deck()
     }
     
     func registerPlayer(name: String) {
-        self.playingState.value = .playersRegistered(players: self.players, gameType: self.gameType)
+        self.state.value = .playersRegistered(players: self.players, gameType: self.gameType)
     }
     
     func startGame() {
-        self.state.value = .playing(gameType: self.gameType)
-        
         FutureChain.create()
             .then { self.createDeck() }
             .then { self.dealCards() }
@@ -91,8 +86,7 @@ class GameEngineLocal: GameEngine {
                                 print("placeOnTable markTrickWinnerPlayerMove success")
                             case .failure:
                                 print("placeOnTable markTrickWinnerPlayerMove failure")
-                                self.playingState.value = nil
-                                self.state.value = .gameEnd
+                                self.state.value = .gameEnd(winner: tableResult.playerPosition)
                             }
                         })
                 case .failure(_):
@@ -111,14 +105,14 @@ class GameEngineLocal: GameEngine {
     }
     
     func exchangeTrumpCard(_ player: Player, _ card: Card) {
-        guard card.color == trumpColor && card.face == .jack else {
-            assertionFailure()
+        guard let exchangedCard = self.deck.exchangeTrumpCard(card) else {
+            assertionFailure("Check!!")
             return
         }
         
-        let cardT = self.deckCards.removeLast()
+        player.addCard(exchangedCard)
         
-        self.playingState.value = .playerExchangeTrumpCard(player: player, card: card, completion: {
+        self.state.value = .playerExchangeTrumpCard(player: player, card: card, completion: {
             print("TADAAAAAA")
             
             /*
@@ -130,7 +124,7 @@ class GameEngineLocal: GameEngine {
             })
  */
             
-            self.deckCards.append(card)
+//            self.deckCards.append(card)
             
             //deckCards.append(card)
         })
@@ -140,7 +134,9 @@ class GameEngineLocal: GameEngine {
     
     private func createDeck() -> Future<Void> {
         return Future { [unowned self] completion in
-            self.playingState.value = .createDeck(count: self.deckCards.count, completion: {
+            self.deck.prepare()
+            
+            self.state.value = .createDeck(count: self.deck.deckCards.count, completion: {
                 completion(FutureResult.success(()))
             })
         }
@@ -215,7 +211,7 @@ class GameEngineLocal: GameEngine {
     
     private func dealCard(to playerPosition: PlayerPosition) -> Future<Void> {
         return Future { [unowned self] completion in
-            if self.deckCards.isEmpty {
+            if self.deck.deckCards.isEmpty {
                 completion(FutureResult.success(()))
                 return
             }
@@ -226,8 +222,8 @@ class GameEngineLocal: GameEngine {
                 return
             }
             
-            let card = self.deckCards.removeFirst()
-            self.playingState.value = .addCard(player: player, card: card, deckCardsCount: self.deckCards.count, completion: {
+            let card = self.deck.takeNext()
+            self.state.value = .addCard(player: player, card: card, deckCardsCount: self.deck.deckCards.count, completion: {
                 completion(FutureResult.success(()))
             })
         }
@@ -235,10 +231,10 @@ class GameEngineLocal: GameEngine {
     
     private func placeTrumpCard() -> Future<Void> {
         return Future { [unowned self] completion in
-            let card = self.deckCards.removeFirst()
-            self.trumpColor = card.color
-            self.playingState.value = .placeTrumpCard(card: card, completion: {
-                self.deckCards.append(card)
+            let card = self.deck.takeNext()
+            self.deck.placeTrumpCard(card)
+            
+            self.state.value = .placeTrumpCard(card: card, completion: {
                 completion(FutureResult.success(()))
             })
         }
@@ -246,7 +242,7 @@ class GameEngineLocal: GameEngine {
     
     private func markStartingPlayerMove() -> Future<Void> {
         return Future { [unowned self] completion in
-            self.playingState.value = .playerOnMove(playerPosition: .first, players: self.players, completion: {
+            self.state.value = .playerOnMove(playerPosition: .first, players: self.players, completion: {
                 completion(FutureResult.success(()))
             })
         }
@@ -296,7 +292,7 @@ class GameEngineLocal: GameEngine {
                 }
             }
             
-            self.playingState.value = .playerOnMove(playerPosition: nextPlayer, players: self.players, completion: {
+            self.state.value = .playerOnMove(playerPosition: nextPlayer, players: self.players, completion: {
                 completion(FutureResult.success(()))
             })
         }
@@ -304,13 +300,13 @@ class GameEngineLocal: GameEngine {
     
     private func disablePlayersMove() -> Future<Void> {
         return Future { [unowned self] completion in
-            self.playingState.value = .playerOnMove(playerPosition: nil, players: self.players, completion: {
+            self.state.value = .playerOnMove(playerPosition: nil, players: self.players, completion: {
                 completion(FutureResult.success(()))
             })
         }
     }
     
-    private func addCardToTable(_ playerPosition: PlayerPosition, _ card: Card) -> Future<TableResolvingResult> {
+    private func addCardToTable(_ playerPosition: PlayerPosition, _ card: Card) -> Future<TableResult> {
         return Future { [unowned self] completion in
             guard let player = self.playerForPosition(playerPosition) else {
                 assertionFailure("No player!!!!")
@@ -318,7 +314,7 @@ class GameEngineLocal: GameEngine {
                 return
             }
             
-            self.playingState.value = .playerMove(player: player, card: card, completion: {
+            self.state.value = .playerMove(player: player, card: card, completion: {
                 if let result = self.table.addCard(card, by: playerPosition) {
                     completion(FutureResult.success(result))
                 } else {
@@ -338,18 +334,18 @@ class GameEngineLocal: GameEngine {
             })
             
             if endgame {
-                self.playingState.value = .gameEnd(winner: playerPosition)
+                self.state.value = .gameEnd(winner: playerPosition)
                 completion(FutureResult.success(()))
                 return
             }
             
-            self.playingState.value = .playerOnMove(playerPosition: playerPosition, players: self.players, completion: {
+            self.state.value = .playerOnMove(playerPosition: playerPosition, players: self.players, completion: {
                 completion(FutureResult.success(()))
             })
         }
     }
     
-    private func stash(tableResult: TableResolvingResult) -> Future<Void> {
+    private func stash(tableResult: TableResult) -> Future<Void> {
         return Future { [unowned self] completion in
             guard let player = self.playerForPosition(tableResult.playerPosition) else {
                 assertionFailure("No player!!!!")
@@ -357,7 +353,7 @@ class GameEngineLocal: GameEngine {
                 return
             }
             
-            self.playingState.value = .stashTableCards(player: player, completion: {
+            self.state.value = .stashTableCards(player: player, completion: {
                 completion(FutureResult.success(()))
             })
         }

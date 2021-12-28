@@ -1,5 +1,4 @@
 import Foundation
-import UIKit
 
 public protocol IServiceLocator {
     func get<T>(type: T.Type, name: String) -> T

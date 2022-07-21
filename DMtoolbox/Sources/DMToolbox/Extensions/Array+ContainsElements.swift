@@ -1,11 +1,3 @@
-//
-//  Array+ContainsElements.swift
-//  ImpactWrapConsumer
-//
-//  Created by Davorin Mađarić on 08/01/2018.
-//  Copyright © 2018 Inova. All rights reserved.
-//
-
 import Foundation
 
 extension Array where Element: Equatable {
